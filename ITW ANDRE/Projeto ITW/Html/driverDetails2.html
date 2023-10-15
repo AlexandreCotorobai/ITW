@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="/Aulas Práticas/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Aulas Práticas/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" />
+    <title>Driver Details</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: red">
+        <div class="container-fluid">
+            <a href="index.html" style="margin-right: 2%;"><img src="/Aulas Práticas/Projeto ITW/Images/Logo F1.svg" height="40" width="100" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" style="color: white;" href="champions.html"><u>Back</u></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Work Area-->
+    <div class="container">
+        <div class="py-2 mb-3">
+            <h2 data-bind="text:Name() +' ['+DriverId()+']'"></h2>
+        </div>
+        <!-- ko if:Name().length > 0 -->
+        <table class="table table-sm small">
+            <tr class="row">
+                <th class="col-md-2">Driver Id</th>
+                <td class="col-md-10" data-bind="text: DriverId"></td>
+            </tr>
+            <tr class="row">
+                <th class="col-md-2">Nickname</th>
+                <td class="col-md-10" data-bind="text: DriverRef"></td>
+            </tr>
+            <tr class="row" data-bind="visible: ImageUrl() != '' && ImageUrl() != null">
+                <th class="col-md-2">Image</th>
+                <td class="col-md-10">
+                    <img class="img-thumbnail col-2" data-bind="attr:{src: ImageUrl}" /><br />[<span data-bind="text: ImageUrl"></span>]
+                </td>
+            </tr>
+            <tr class="row">
+                <th class="col-md-2">Name</th>
+                <td class="col-md-10" data-bind="text: Name"></td>
+            </tr>
+            <tr class="row">
+                <th class="col-md-2">Nationality</th>
+                <td class="col-md-10" data-bind="text: Nationality"></td>
+            </tr>
+            <tr class="row" data-bind="visible: Number() != '' && Number() != null">
+                <th class="col-md-2">Number</th>
+                <td class="col-md-10" data-bind="text: Number"></td>
+            </tr>
+            <tr class="row">
+                <th class="col-md-2">Url</th>
+                <td class="col-md-10">
+                    <a class="text-muted text-decoration-none" data-bind="attr: {href: Url, target:'blank'}"><i class="fa fa-external-link"></i> [<span class="" data-bind="text: Url"></span>]</a>
+                </td>
+            </tr>
+            <tr class="row">
+                <th colspan="2">Races (<span data-bind="text: Races().length"></span>)</th>
+            </tr>
+            <tr>
+                <td colspan="2" class="small" data-bind="foreach: Races">
+                    <div class="border rounded d-inline-block mr-2 mb-1 p-1">
+                        <i class="fa fa-dot-circle-o"></i>
+                        <a class="text-muted text-decoration-none" data-bind="text: Name + ' ('+Year+')', attr: { href: './raceDetails?id=' + RaceId }"></a> (
+                        <span data-bind="text: RaceId"></span>)
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <!-- /ko -->
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-light">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        <img src="../images/F1_logo.png" height="30" /> Loading data...
+                    </h5>
+                </div>
+                <div class="modal-body text-center">
+                    <i class="fa fa-spin fa-3x fa-refresh"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Work Area -->
+    <nav class="fixed-bottom">
+        <div class="footer">
+            <footer class="text-white mt-2" style="background-color: red;">
+                <div class="container p-2">
+                    <section class="text-center mb-4">
+                        <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/Formula1" role="button"><i class="fa fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/F1" role="button"><i class="fa fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/f1/" role="button"><i class="fa fa-instagram"></i></a>
+                    </section>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-auto">
+                            <p class="pt-2">
+                                <strong>Sign up for our newsletter</strong>
+                            </p>
+                        </div>
+                        <div class="col-md-5 col-12">
+                            <div class="form-outline form-white mb-4">
+                                <input type="email" id="form5Example21" class="form-control" placeholder="Enter your email address" />
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-outline-light mb-4">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </nav>
+    <script src="/Aulas Práticas/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="/Aulas Práticas/Scripts/knockout-3.5.1.js"></script>
+    <script src="/Aulas Práticas/Scripts/jquery-3.6.0.min.js"></script>
+    <script src="/Aulas Práticas/Projeto ITW/Js/driverDetails.js"></script>
+</body>
+
+</html>

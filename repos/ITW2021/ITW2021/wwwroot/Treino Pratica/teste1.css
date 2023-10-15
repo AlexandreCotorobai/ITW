@@ -1,0 +1,13 @@
+﻿/**** TODO ****/
+.banner {
+    background-image: url('https://images-ext-1.discordapp.net/external/C8q2QhngtCVcFMov6uHAqFkVRmfQIdmrmIq4qSydEg0/https/static.independent.co.uk/s3fs-public/thumbnails/image/2019/07/21/10/untitled-design-82.png?width=1340&height=670');
+    height: 300px;
+    margin: auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 20px;
+}
+.hide {
+    display: none;
+}

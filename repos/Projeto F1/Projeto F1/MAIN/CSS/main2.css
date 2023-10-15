@@ -1,0 +1,100 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    min-height: 75px;
+    background: #eee;
+    align-items: center;
+    justify-content: center;
+}
+
+nav > a {
+    text-decoration: none;
+    color: rgba(199, 99, 99, 0.8);
+    margin: 0 40px;
+}
+
+.navbar-brand.abs {
+    position: absolute;
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+nav > active {
+    color: white
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+#carrouselMain .img-responsive {
+    z-index: -100;
+    height: 600px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*#carrouselMain img {
+    display: block;
+    width: auto;
+    min-height: 600px;
+    position: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px auto;
+    text-align: center;
+}*/
+
+/*.carousel-item img {
+    margin: auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}*/
+
+/*#carouselMain .carousel-caption {
+    bottom: 20%;
+}
+
+#ccarouselMain .carousel-caption h2 {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+#carouselMain .carousel-caption p {
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 30px;
+}*/
+
+.main-btn {
+    background-color: white;
+    color: black;
+    text-transform: uppercase;
+    width: 200px;
+    height: 60px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 3px solid transparent;
+    transition: .5s;
+    text-decoration: none;
+    border-color: dimgrey;
+}
+
+    .main-btn:hover {
+        color: #FFF;
+        background-color: #980000;
+        border-color: transparent;
+    }
+
+

@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="../lib/font-awesome/dist/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="myScript.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="container">
+            <div class="border-bottom pb-2 mb-2">
+                <h2><i class="fa fa-calculator"></i> Calculadora!</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <input id="op1" type="number" value="1" class="form-control" />
+            </div>
+            <div class="col-md-3">
+                <select id="operacao" onchange="getOperacao()" class="form-select">
+                    <option value="+" selected>Soma </option>
+                    <option value="-">Subtração </option>
+                    <option value="*">Multiplicação </option>
+                    <option value=":">Divisão </option>
+                    <option value="%">Resto da Divisão </option>
+                    <option value="!">Factorial </option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <input id="op2" type="number" value="1" class="form-control" />
+            </div>
+            <div class="col-md-3">
+                <input id="res" value="" class="form-control" />
+            </div>
+            <hr /> 
+            <div class="text-end">
+                <button type="button" class="btn btn-primary" onclick="calcula()">Calcular</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

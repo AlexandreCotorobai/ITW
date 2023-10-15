@@ -1,0 +1,3 @@
+No ficheiro html, na linha 18, o value está errado!
+No javascript o último if está errado!
+No javascript o penúltimo if está com return false e deveria estar um value = false!

@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>ITW_2_2+3</title>
+    <style>
+        .black{
+            background-color:black;
+        }
+        
+        table,td,th,tr{
+            text-align:center;
+            line-height:22px;
+            font-size:22px;
+            color:white;
+            border-width:2px;
+            border-style:dashed;
+            border-color:dimgrey;
+            border-collapse:collapse;
+        }
+    </style>
+</head>
+<body>
+    <div style="width:1000px">
+        <table>
+        <tr>
+            <td class="black" style="width:846px; height:60px;font-size:26px; color:yellow">Boletim de Informações</td>
+        </tr>
+    </table>
+    <table style="margin-bottom:5px ; margin-top:5px;">
+        <form name="PersonData" action="http://192.168.160.36/FormEcho.aspx" method="post">
+            <tr>
+                <td class="black" style="width:196px; height:40px">Nome</td>
+                <td style="width:646px; height:30px; line-height:30px ; text-align:left">
+                    <input type="text" value="" name="nome" style="height:90%; width:70%; font-size:22px" />
+                </td>
+            </tr>
+            <tr>
+                <td class="black" style="width:196px; height:40px">Email</td>
+
+                <td style="width:646px; height:30px; text-align:left"><input type="email" value="" name="email" style="height:90%; width:70%; font-size:22px" /></td>
+            </tr>
+            <tr>
+                <td class="black" style="width:196px; height:40px">Password</td>
+
+                <td style="width:646px; height:30px; text-align:left"><input type="password" value="" name="password" style="height:90%; width:70%; font-size:22px" /></td>
+            </tr>
+</form></table>
+    <table><form name="PersonData" action="http://192.168.160.36/FormEcho.aspx" method="post">
+    <tr>
+        <td class="black" style="width:194px; padding:2px">Disciplinas</td>
+        <td style="width:319px; padding:2px">
+            <fieldset style="background-color:#D4D4D4 ;  width:284px;color:black; font-size:18px;text-align:left">
+                <legend style="font-sixe:22px; font-weight:bold">Disciplinas - 1º Semestre</legend>
+                <input type="checkbox" name="1semestre" value="ALGA" />Álgebra LInear e Geometria Analítica<br />
+                <input type="checkbox" name="1semestre" value="C1" />Cálculo 1 <br />
+                <input type="checkbox" name="1semestre" value="EF" />Elementos de Física<br />
+                <input type="checkbox" name="1semestre" value="FP" />Fundamentos de Programação<br />
+                <input type="checkbox" name="1semestre" value="ITW" />Introdução às Tecnologias Web<br />
+            </fieldset>
+            <fieldset style="background-color:#D4D4D4 ;  width:284px;color:black; font-size:18px;text-align:left">
+                <legend style="font-sixe:22px; font-weight:bold">Extra - 1º Semestre</legend>
+                <input type="radio" name="1semestrecu" value="M" />Música
+                <input type="radio" name="1semestrecu" value="C" />Cinema
+                <input type="radio" name="1semestrecu" value="F" />Fotografia <br />
+                <input type="radio" name="1semestrecu" value="D" />Dança
+            </fieldset>
+        </td>
+        <td style="width:319px;padding:2px">
+            <fieldset style="background-color:#D4D4D4 ;  width:284px;color:black; font-size:18px;text-align:left">
+                <legend style="font-sixe:22px; font-weight:bold">Disciplinas - 1º Semestre</legend>
+                <input type="checkbox" name="1semestre" value="ALGA" />Álgebra LInear e Geometria Analítica<br />
+                <input type="checkbox" name="1semestre" value="C1" />Cálculo 1 <br />
+                <input type="checkbox" name="1semestre" value="EF" />Elementos de Física<br />
+                <input type="checkbox" name="1semestre" value="FP" />Fundamentos de Programação<br />
+                <input type="checkbox" name="1semestre" value="ITW" />Introdução às Tecnologias Web<br />
+            </fieldset>
+            <fieldset style="background-color:#D4D4D4 ;  width:284px;color:black; font-size:18px;text-align:left">
+                <legend style="font-sixe:22px; font-weight:bold">Extra - 1º Semestre</legend>
+                <input type="radio" name="1semestrecu" value="M" />Música
+                <input type="radio" name="1semestrecu" value="C" />Cinema
+                <input type="radio" name="1semestrecu" value="F" />Fotografia <br />
+                <input type="radio" name="1semestrecu" value="D" />Dança
+            </fieldset>
+        </td>
+    </tr>
+</form></table>
+        <table style="margin-top:5px">
+            <tr>
+                <td class="black" style="width:846px; height:60px;font-size:26px; color:yellow">
+                    <input type="submit" name="Btnsubmit" />
+                    <input type="reset" name="Btnreset" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    </div>
+</body>
+</html>

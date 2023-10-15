@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Inscrição de concerto</title>
+    <link href="../lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../lib/font-awesome/dist/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <h1 class="border-bottom py-2 mb-2">Concerto</h1>
+        <form action="http://192.168.160.36/FormEcho.aspx" id="formularionojento">
+            <div class="row mb-2">
+                <label for="Nome" class="col-md-2 col-form-label">Nome</label>
+                <div class="col-md-10">
+                    <input type="text" name="Nome" id="Nome" class="form-control" />
+                    <div class="d-none text-danger col-form-label" id="NomeError"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório (Min: 10 letras, max 100).</div>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <label for="Morada" class="col-md-2 col-form-label">Morada</label>
+                <div class="col-md-10">
+                    <textarea name="Morada" id="Morada" class="form-control" rows="4"></textarea>
+                    <div class="d-none text-danger col-form-label" id="MoradaError"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório (Min: 20, max 200).</div>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <label for="Email" class="col-md-2 col-form-label">Email</label>
+                <div class="col-md-10">
+                    <input type="text" name="Email" id="Email" class="form-control" />
+                    <div class="d-none text-danger col-form-label" id="EmailError"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório (M????????ras).</div>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-2">Local</div>
+                <div class="col-md-4 ">
+                    <div class="form-check">
+                        <input type="checkbox" name="spot" class="form-check-input" value="100" id="rf"><label class="form-check-label" for="rf">Relva Frente (100€)</label><br />
+                        <input type="checkbox" name="spot" class="form-check-input" value="80" id="rt"><label class="form-check-label" for="rt">Relva Trás (80€)</label><br />
+                        <input type="checkbox" name="spot" class="form-check-input" value="50" id="bl"><label class="form-check-label" for="bl">Bancada Lateral (50€)</label> <br />
+                        <input type="checkbox" name="spot" class="form-check-input" value="65" id="bc"><label class="form-check-label" for="bc">Bancada Central (65€)</label>
+                    </div>
+                    <div class="d-none text-danger col-form-label" id="VehicleError"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório (Escolha, pelo menos, dois meios de transporte).</div>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <label for="Preço máximo" class="col-md-2 col-form-label">max price</label>
+                <div class="col-md-2">
+                    <input type="text" disabled="disabled" value ="0" name="Nome" id="Price" class="form-control"/>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-10 offset-md-2">
+                    <input type="Submit" name="submitBtn" value="Enviar" class="btn btn-primary" onclick="return validate()" />
+                    <input type="reset" name="resetBtn" value="Limpar" class="btn btn-secondary" />
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="../../Scripts/jquery-3.6.0.min.js"></script>
+    <script>
+
+        //retVal = true;
+        //$('input:checkbox').change(function () {
+        //    var lista = $('input[checkbox]:checked');
+        //    lista.sort();
+        //    console.log(lista[lista.len()]);
+        //});
+        function validate() {
+            var retVal = true;
+            if ($("#Nome").val().length < 10 || $("#Nome").val().length > 100) {
+                $("#NomeError").removeClass("d-none");
+                retVal = false;
+            } else {
+                $("#NomeError").addClass("d-none");
+            }
+
+            if ($("#Morada").val().length < 20 || $("#Nome").val().length > 200) {
+                $("#MoradaError").removeClass("d-none");
+                retVal = false;
+            } else {
+                $("#MoradaError").addClass("d-none");
+            }
+            if ($("#Email").val().length < 10 || $("#Email").val().length > 100 || $("#Email").val().indexOf("@") == -1 || $("#Email").val().lastIndexOf("@") > $("#Email").val().lastIndexOf(".") || $("#Email").val().lastIndexOf(".") == $("#Email").val().length-1) {
+                $("#EmailError").removeClass("d-none");
+                //console.log($("#Email").val().indexOf("@"))
+                //console.log($("#Email").val().lastIndexOf("@"))
+                //console.log($("#Email").val().lastIndexOf("."))
+                retVal = false;
+            } else {
+                $("#EmailError").addClass("d-none");
+                //console.log($("#Email").val().lastIndexOf("."))
+                //console.log($("#Email").val().length)
+            }
+
+            if ($("input[type='checkbox']:checked").length < 2) {
+                //console.log($("input[checkbox]:checked").val())
+                $("#VehicleError").removeClass("d-none");
+            } else {
+                $("#VehicleError").addClass("d-none");
+            };
+            return retVal;
+        };
+
+        $('input:reset').click(function () {
+            $("#VehicleError").addClass("d-none");
+            $("#EmailError").addClass("d-none");
+            $("#MoradaError").addClass("d-none");
+            $("#NomeError").addClass("d-none");
+        })
+
+        $("input:checkbox").change(function () {
+            var max = 0;
+
+            if ($("#rf").is(":checked")) {
+                max = max + parseFloat($("#rf").val());
+            }
+            if ($("#rt").is(":checked")) {
+                max = max + parseFloat($("#rt").val());
+            }
+            if ($("#bl").is(":checked")) {
+                max = max + parseFloat($("#bl").val());
+            }
+            if ($("#bc").is(":checked")) {
+                max = max + parseFloat($("#bc").val());
+            }
+            $("#Price").val(max);
+
+        })
+
+    </script>
+</body>
+</html>
